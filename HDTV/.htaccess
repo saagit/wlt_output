@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteBase "/HDTV/"
+RewriteRule "^Antennas(/.*)?$" "/hdtv-antennas.html" [DP,QSD,NE,R=301,L]
+RewriteRule "^Cable(/.*)?$" "/hdtv.html" [DP,QSD,NE,R=301,L]
+RewriteRule "^Channels(/.*)?$" "/hdtv.html" [DP,QSD,NE,R=301,L]
+RewriteRule "^Coverage(/.*)?$" "/hdtv-coverage.html" [DP,QSD,NE,R=301,L]
+RewriteRule "^Reception(/.*)?$" "/faq.html" [DP,QSD,NE,R=301,L]
+RewriteRule "^Repack(/.*)?$" "/hdtv-repack.html" [DP,QSD,NE,R=301,L]
+RewriteRule "^Stations(/.*)?$" "/hdtv.html" [DP,QSD,NE,R=301,L]
+RewriteRule "^.*$" "/hdtv.html" [DP,QSD,NE,R=301,L]

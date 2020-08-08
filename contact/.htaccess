@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteBase "/contact/"
+RewriteRule "^.*$" "/contact-us.html" [DP,QSD,NE,R=301,L]

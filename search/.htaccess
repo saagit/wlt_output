@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteBase "/search/"
+RewriteRule "^.*$" "/" [DP,QSD,NE,R=301,L]

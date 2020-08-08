@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteBase "/"
+RewriteRule "^Siuslaw_News_01-16-2010.pdf$" "/pdfs/Siuslaw_News_01-16-2010.pdf" [DP,QSD,NE,R=301,L]
+RewriteRule "^The_Oar.pdf$" "/pdfs/The_Oar.pdf" [DP,QSD,NE,R=301,L]

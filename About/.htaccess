@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteBase "/About/"
+RewriteRule "^BOD(/.*)?$" "/governance.html#board-members" [DP,QSD,NE,R=301,L]
+RewriteRule "^Bylaws(/.*)?$" "/pdfs/WLT_Bylaws_2018.pdf" [DP,QSD,NE,R=301,L]
+RewriteRule "^Committees(/.*)?$" "/governance.html#committees" [DP,QSD,NE,R=301,L]
+RewriteRule "^History(/.*)?$" "/history.html" [DP,QSD,NE,R=301,L]
+RewriteRule "^Lease(/.*)?$" "/leasing.html" [DP,QSD,NE,R=301,L]
+RewriteRule "^Meetings(/.*)?$" "/governance.html#board-meetings-dates-scheduled" [DP,QSD,NE,R=301,L]

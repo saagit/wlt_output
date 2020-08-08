@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteBase "/WX/"
+RewriteRule "^.*$" "/florence-oregon.html" [DP,QSD,NE,R=301,L]

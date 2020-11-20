@@ -135,8 +135,7 @@
   <div>
 <div class="toc">
 <ul>
-<li><a href="#board-meetings-dates-scheduled">Board Meetings Dates Scheduled</a></li>
-<li><a href="#upcoming-meetings">Upcoming Meetings:</a></li>
+<li><a href="#board-meetings">Board Meetings</a></li>
 <li><a href="#bylaws">Bylaws</a></li>
 <li><a href="#board-members">Board Members</a></li>
 <li><a href="#committees">Committees</a><ul>
@@ -146,13 +145,13 @@
 </li>
 </ul>
 </div>
-<h3 id="board-meetings-dates-scheduled">Board Meetings Dates Scheduled</h3>
+<h3 id="board-meetings">Board Meetings</h3>
 <p>Historically, meetings were held on the fourth Wednesday of January,
 April, July, and October at 6:00 PM in the Bromley room of the Siuslaw
-Public Library. For the time being however, upcoming meetings are
-planned to be virtual.  Details on how to attend will be sent to
+Public Library. For the time being, upcoming meetings are planned to
+be virtual.  Details on how to attend will be sent to
 <a href="https://westlanetv.org/membership.html">members</a>.</p>
-<h3 id="upcoming-meetings">Upcoming Meetings:</h3>
+<p>The next four scheduled meetings are:</p>
 <table>
 <thead>
 <tr>
@@ -181,40 +180,45 @@ planned to be virtual.  Details on how to attend will be sent to
 </table>
 <script type="text/javascript">
 function setFourthWednesdayOfQuarter(dt) {
-    // First, calculate the first day of the quarter
+    // Calculate the first month of the quarter containing dt.
     var tmp = dt.getMonth();
     tmp = tmp - tmp % 3;
-    dt.setMonth(tmp)
-    dt.setDate(1);
-
-    dt.setDate(22) // The 22nd is the earliest possible 4th Wednesday
+    dt.setMonth(tmp);
+    // The earliest possible 4th Wednesday of a month is the 22nd.
+    dt.setDate(22);
     /*
-      We need to determine how many days out Wednesday is.  Sunday is
-      represented as Day 0, so Wednesday is Day 3.  For comprehension,
-      here is a table of how many days need to be added to the current
-      date to get to a Wednesday and what the code does:
+      We need to determine when the first Wednesday is from the 22nd.
+      In JavaScript dates, Sunday is 0, so Wednesday is 3.  For
+      comprehension, here is a table of how many days need to be added
+      to the 22nd to get to a Wednesday depending on what day of the
+      week the the 22nd is on and the math for calculating it:
 
-       Current       Needed   10-Current   (10-Current)%7
-       Sunday(0)       3          10              3
-       Monday(1)       2           9              2
-       Tuesday(2)      1           8              1
-       Wednesday(3)    0           7              0
-       Thursday(4)     6           6              6
-       Friday(5)       5           5              5
-       Saturday(6)     4           4              4
+       Day of Week of    Days to add to
+       the 22nd (DOW22)  get to a Wed.   10 - DOW22   (10 - DOW22) % 7
+       ----------------  --------------  -----------  ----------------
+            Sunday=0           3         10 - 0 = 10  (10 - 0) % 7 = 3
+            Monday=1           2         10 - 1 = 9   (10 - 1) % 7 = 2
+           Tuesday=2           1         10 - 2 = 8   (10 - 2) % 7 = 1
+         Wednesday=3           0         10 - 3 = 7   (10 - 3) % 7 = 0
+          Thursday=4           6         10 - 4 = 6   (10 - 4) % 7 = 6
+            Friday=5           5         10 - 5 = 5   (10 - 5) % 7 = 5
+          Saturday=6           4         10 - 6 = 4   (10 - 6) % 7 = 4
+
+      Note that the results of the math in the last column match the
+      desired results from the second column.
     */
-    dt.setDate(dt.getDate() + (10 - dt.getDay()) % 7)
+    dt.setDate(dt.getDate() + (10 - dt.getDay()) % 7);
 }
 
 function setNextQuarter(dt) {
-    dt.setMonth(dt.getMonth() + 3)
+    dt.setMonth(dt.getMonth() + 3);
 }
 
 function setMeetN(dt, n) {
     document.getElementById('meet' + n).innerText =
     dt.toLocaleDateString([], {year: 'numeric',
                    month: 'long',
-                   day: 'numeric'})
+                   day: 'numeric'});
 }
 
 var now = new Date();
@@ -230,8 +234,23 @@ do {
 } while (i < 5);
 </script>
 
+<p>Starting with the October 28, 2020 meeting, summaries of past board
+meetings are being made available in PDF format:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Meeting summary from</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="https://westlanetv.org/pdfs/WLT BoD Meeting Summary 2020-10-28.pdf">October 28, 2020</a></td>
+</tr>
+</tbody>
+</table>
 <h3 id="bylaws">Bylaws</h3>
-<p>Our bylaws are available in <a href="https://westlanetv.org/pdfs/WLT_Bylaws_2018.pdf">PDF format</a>.</p>
+<p>Our bylaws are available in <a href="https://westlanetv.org/pdfs/WLT_Bylaws_October_28_2020_edits.pdf">PDF
+format</a>.</p>
 <h3 id="board-members">Board Members</h3>
 <table>
 <thead>
